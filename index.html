@@ -1565,10 +1565,10 @@
     // Multi-API Fetching Logic with Rotation and Fallback (4 endpoints)
     async function fetchFromAPIs() {
       const endpoints = [
-        'https://warpvpn.parsabot.ir/',
-        'https://warpvpn2.parsabot.ir/',
-        'https://warpvpn3.parsabot.ir/',
-        'https://warpvpn4.parsabot.ir/'
+        '',
+        '',
+        '',
+        ''
       ];
       
       const shuffled = [...endpoints].sort(() => Math.random() - 0.5);
@@ -1579,7 +1579,7 @@
           try {
             response = await fetch(url);
           } catch (directErr) {
-            response = await fetch('https://monitor.botplusteam.ir/warp/' + encodeURIComponent(url));
+            response = await fetch(url);
           }
           
           if (!response.ok) continue;
