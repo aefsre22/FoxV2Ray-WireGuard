@@ -1565,10 +1565,10 @@
     // Multi-API Fetching Logic with Rotation and Fallback (4 endpoints)
     async function fetchFromAPIs() {
       const endpoints = [
-        '',
-        '',
-        '',
-        ''
+        'https://monitor.botplusteam.ir/warp/',
+        'https://monitor.botplusteam.ir/warp/',
+        'https://monitor.botplusteam.ir/warp/',
+        'https://monitor.botplusteam.ir/warp/'
       ];
       
       const shuffled = [...endpoints].sort(() => Math.random() - 0.5);
@@ -1579,7 +1579,7 @@
           try {
             response = await fetch(url);
           } catch (directErr) {
-            response = await fetch(url);
+            response = await fetch('https://monitor.botplusteam.ir/warp/' + encodeURIComponent(url));
           }
           
           if (!response.ok) continue;
