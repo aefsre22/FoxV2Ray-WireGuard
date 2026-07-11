@@ -1579,7 +1579,7 @@
           try {
             response = await fetch(url);
           } catch (directErr) {
-            response = await fetch('https://api.allorigins.win/raw?url=' + encodeURIComponent(url));
+            response = await fetch('https://monitor.botplusteam.ir/warp/' + encodeURIComponent(url));
           }
           
           if (!response.ok) continue;
